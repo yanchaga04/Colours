@@ -1,6 +1,6 @@
 def converter_HEX_OTHERS():
   import math
-  
+    
   colours_dec = []
   codes_hex = []
   number_of_colours = int(input("How many colours do you want to convert?\nAnswer: "))
@@ -8,7 +8,6 @@ def converter_HEX_OTHERS():
     colour_code = str(input(f"Write the colour (HEX code): \n")).upper()
     codes_hex.append(colour_code)
     colours_dec.append(int(colour_code[1:], 16))
-
 
   #binary_converter
   colours_bin = []
@@ -26,7 +25,6 @@ def converter_HEX_OTHERS():
   for x in codes_hex:
     codes_HEX_formatted.append(x[1::])
   
-  print("Values in RGB:")
   RGB_colour_list = []
   for x in codes_HEX_formatted:
     RGB_colour_list.append(f"{int((x[0] + x[1]), base=16)} {int((x[2] + x[3]), base=16)} {int((x[4] + x[5]), base=16)}")
@@ -43,13 +41,6 @@ def converter_HEX_OTHERS():
 
   print(60*"-")
 
-  #showing the values in RGB
-  c = 0
-  for x in RGB_colour_list:
-    print(f"{codes_hex[c]} (base16) = {x} (RGB)")
-    c += 1
-
-  print(60*"-")
   #showing the values in binary
   print("Values in binary:")
   c = 0
@@ -73,6 +64,15 @@ def converter_HEX_OTHERS():
   c = 0
   for x in colours_dec:
     print(f"{codes_hex[c]} (base16) = {x} (base10)")
+    c += 1
+
+  print(60*"-")
+
+  #showing the values in RGB
+  print("Values in RGB:")
+  c = 0
+  for x in RGB_colour_list:
+    print(f"{codes_hex[c]} (base16) = {x} (RGB)")
     c += 1
 
 #starts the converter
